@@ -1,1 +1,1 @@
-# ig-follower-tracker
+# Instagram Follower Tracker
