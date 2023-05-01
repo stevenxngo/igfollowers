@@ -1,26 +1,11 @@
-import json
+import logic
+import gui
 
 
-# open followers file
-with open('followers_1.json') as f:
-    followers = json.load(f)
+def main():
+    logic.compare_followers()
+    gui.show()
 
-# open following file
-with open('following.json') as f:
-    following = json.load(f)
 
-# resulting diff list
-diff = []
-
-# add all following to list
-for following in following["relationships_following"]:
-    diff.append(following["string_list_data"][0]["value"])
-
-# remove mutual from list
-for follower in followers:
-    if follower["string_list_data"][0]["value"] in diff:
-        diff.remove(follower["string_list_data"][0]["value"])
-
-# print users in list
-for user in diff:
-    print(user)
+if __name__ == '__main__':
+    main()
