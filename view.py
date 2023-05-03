@@ -4,7 +4,7 @@ from pathlib import Path
 from PyQt6.QtGui import QFont, QFontDatabase
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtWidgets import QSpacerItem, QSizePolicy, QMainWindow, QWidget, QGridLayout, QLabel, QPushButton, QTextEdit, \
-    QFileDialog
+    QFileDialog, QStatusBar
 import qdarktheme
 
 
@@ -30,6 +30,7 @@ class IGView(QMainWindow):
         self._create_compare_button()
         # self._create_log()
         self._create_display()
+        self._create_status_bar()
         qdarktheme.setup_theme("auto")
 
     def _create_title(self):
@@ -95,3 +96,10 @@ class IGView(QMainWindow):
 
     def clear_display(self):
         self.display.setText("")
+
+    def _create_status_bar(self):
+        self.status_bar = QStatusBar(self)
+        self.setStatusBar(self.status_bar)
+
+    def set_status_bar(self, msg):
+        self.status_bar.showMessage(msg)

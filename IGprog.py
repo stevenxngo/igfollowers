@@ -25,8 +25,9 @@ class IGFollowerChecker:
                 try:
                     data = json.load(f)
                     self._model.set_followers(data)
+                    self._view.set_status_bar("Followers uploaded successfully")
                 except JSONDecodeError:
-                    self._view.set_display("Malformed followers JSON")
+                    self._view.set_status_bar("Malformed followers JSON")
 
     def handle_following_upload(self):
         fname = self._view.open_file_dialog()
@@ -35,20 +36,22 @@ class IGFollowerChecker:
                 try:
                     data = json.load(f)
                     self._model.set_following(data)
+                    self._view.set_status_bar("Following uploaded successfully")
                 except JSONDecodeError:
-                    self._view.set_display("Malformed following JSON")
+                    self._view.set_status_bar("Malformed following JSON")
 
     def handle_compare(self):
         if self._model.get_following() is not None and self._model.get_followers() is not None:
             res = self._model.compare_followers()
             res_str = "\n".join(res)
             self._view.set_display(res_str)
-        # elif self._model.get_following() is None and self._model.get_followers() is not None:
-        #     self._view.set_display("following is none, followers is not none")
-        # elif self._model.get_following() is not None and self._model.get_followers() is None:
-        #     self._view.set_display("following is not none, followers is none")
-        # else:
-        #     self._view.set_display("following is none, followers is none")
+            # self._view.set_status_bar("Followers compared")
+        elif self._model.get_following() is None and self._model.get_followers() is not None:
+            self._view.set_status_bar("Following not uploaded")
+        elif self._model.get_following() is not None and self._model.get_followers() is None:
+            self._view.set_status_bar("Followers not uploaded")
+        else:
+            self._view.set_status_bar("Followers and following not uploaded")
 
 
 def main():
