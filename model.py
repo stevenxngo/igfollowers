@@ -1,24 +1,28 @@
 import json
 
 
-def open_followers(file='followers_1.json'):
-    with open(file) as f:
-        return json.load(f)
+class IGModel:
+    def __init__(self):
+        self.following = None
+        self.followers = None
 
+    def get_followers(self):
+        return self.followers
 
-def open_following(file='following.json'):
-    with open(file) as f:
-        return json.load(f)
+    def set_followers(self, f):
+        self.followers = f
 
+    def get_following(self):
+        return self.following
 
-def compare_followers():
-    followers = open_followers()
-    following = open_following()
-    diff = []
-    for following in following["relationships_following"]:
-        diff.append(following["string_list_data"][0]["value"])
-    for follower in followers:
-        if follower["string_list_data"][0]["value"] in diff:
-            diff.remove(follower["string_list_data"][0]["value"])
-    for user in diff:
-        print(user)
+    def set_following(self, f):
+        self.following = f
+
+    def compare_followers(self):
+        diff = []
+        for following in self.following["relationships_following"]:
+            diff.append(following["string_list_data"][0]["value"])
+        for follower in self.followers:
+            if follower["string_list_data"][0]["value"] in diff:
+                diff.remove(follower["string_list_data"][0]["value"])
+        return diff
