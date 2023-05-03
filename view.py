@@ -78,12 +78,6 @@ class IGView(QMainWindow):
         self.log.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.grid_layout.setRowMinimumHeight(5, 0)
         self.grid_layout.addWidget(self.log, 5, 0, 1, 2)
-    #
-    # def set_log(self, text):
-    #     self.log.setText(text)
-    #
-    # def clear_log(self):
-    #     self.log.setText("")
 
     def _create_display(self):
         self.display = QTextEdit()
@@ -101,9 +95,3 @@ class IGView(QMainWindow):
 
     def clear_display(self):
         self.display.setText("")
-
-# def show():
-#     app = QApplication(sys.argv)
-#     qdarktheme.setup_theme()
-#     window = IGWindow()
-#     app.exec()
