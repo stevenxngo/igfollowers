@@ -2,7 +2,14 @@ import json
 
 
 class IGModel:
+    """
+    Model class for IGFollowers
+    """
+
     def __init__(self):
+        """
+        Initialize the model
+        """
         self.following = None
         self.followers = None
 
@@ -10,15 +17,29 @@ class IGModel:
         return self.followers
 
     def set_followers(self, f):
+        """
+        Sets the followers json
+        :param f: followers json
+        :return: (void)
+        """
         self.followers = f
 
     def get_following(self):
         return self.following
 
     def set_following(self, f):
+        """
+        Sets the following json
+        :param f: following json
+        :return: (void)
+        """
         self.following = f
 
     def compare_followers(self):
+        """
+        Determines who is followed that doesn't follow back
+        :return: (list) list of usernames
+        """
         diff = []
         for following in self.following["relationships_following"]:
             diff.append(following["string_list_data"][0]["value"])
