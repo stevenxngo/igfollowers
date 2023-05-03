@@ -14,23 +14,31 @@ class IGModel:
         self.followers = None
 
     def get_followers(self):
+        """
+        Gets the follower dictionary
+        :return: (dict) followers
+        """
         return self.followers
 
     def set_followers(self, f):
         """
-        Sets the followers json
-        :param f: followers json
+        Sets the followers dictionary
+        :param f: followers dictionary
         :return: (void)
         """
         self.followers = f
 
     def get_following(self):
+        """
+        Gets the following dictionary
+        :return: (dict) following
+        """
         return self.following
 
     def set_following(self, f):
         """
-        Sets the following json
-        :param f: following json
+        Sets the following dictionary
+        :param f: following dictionary
         :return: (void)
         """
         self.following = f
