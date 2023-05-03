@@ -16,8 +16,6 @@ class IGFollowerChecker:
     def _connect_signals(self):
         self._view.followers_button.clicked.connect(self.handle_followers_upload)
         self._view.following_button.clicked.connect(self.handle_following_upload)
-        # self._view.followers_file.connect(self.handle_followers_upload)
-        # self._view.following_file.connect(self.handle_following_upload)
         self._view.compare_button.clicked.connect(self.handle_compare)
 
     def handle_followers_upload(self):
@@ -27,7 +25,6 @@ class IGFollowerChecker:
                 try:
                     data = json.load(f)
                     self._model.set_followers(data)
-                    self._view.set_display("followers uploaded")
                 except JSONDecodeError:
                     self._view.set_display("Malformed followers JSON")
 
@@ -38,7 +35,6 @@ class IGFollowerChecker:
                 try:
                     data = json.load(f)
                     self._model.set_following(data)
-                    self._view.set_display("following uploaded")
                 except JSONDecodeError:
                     self._view.set_display("Malformed following JSON")
 
