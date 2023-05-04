@@ -72,7 +72,6 @@ class IGFollowerChecker:
                 res_str = "\n".join(res)
                 self._view.set_display(res_str)
                 self._view.clear_status_bar()
-                # self._view.set_status_bar("Followers compared")
             except TypeError:
                 self._view.set_status_bar("Comparison failed")
         elif self._model.get_following() is None and self._model.get_followers() is not None:

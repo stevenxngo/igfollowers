@@ -1,6 +1,3 @@
-import json
-
-
 class IGModel:
     """
     Model class for IGFollowers

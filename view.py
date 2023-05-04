@@ -1,9 +1,7 @@
-import json
-import sys, os
 from pathlib import Path
-from PyQt6.QtGui import QFont, QFontDatabase
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtWidgets import QSpacerItem, QSizePolicy, QMainWindow, QWidget, QGridLayout, QLabel, QPushButton, \
+from PyQt6.QtGui import QFont
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QMainWindow, QWidget, QGridLayout, QLabel, QPushButton, \
     QTextEdit, QFileDialog, QStatusBar
 import qdarktheme
 
