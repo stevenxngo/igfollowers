@@ -26,8 +26,9 @@ accounts that you follow that aren't following you back.
 * Easy upload of files through file dialogs
 * Status bar for errors
 * Clear display of usernames
+* Fast analysis of followers and following
 
 ## Privacy
 
 The only data that is accessed is that of the following and followers, none of which is retained. No unauthorized
-sensitive information is obtained.
+sensitive information is accessed.
