@@ -1,12 +1,4 @@
-darkdetect==0.7.1
-importlib-metadata==6.6.0
-Markdown==3.4.3
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.12.1
-PyQt5-stubs==5.15.6.0
 PyQt6==6.5.0
 PyQt6-Qt6==6.5.0
-PyQt6-sip==13.5.1
+PyQt6_sip==13.5.1
 pyqtdarktheme==2.1.0
-qtwidgets==1.1
-zipp==3.15.0
