@@ -1,3 +1,6 @@
+import os
+
+
 class IGModel:
     """
     Model class for IGFollowers
@@ -7,15 +10,40 @@ class IGModel:
         """
         Initialize the model
         """
+        self.following_fpath = None
+        self.followers_fpath = None
         self.following = None
         self.followers = None
 
-    def get_followers(self):
+    def set_followers_fpath(self, fpath):
         """
-        Gets the follower dictionary
-        :return: (dict) followers
+        Sets the followers file path
+        :param fpath: file path
+        :return: (void)
         """
-        return self.followers
+        self.followers_fpath = fpath
+
+    def get_followers_fpath(self):
+        """
+        Gets the followers file path
+        :return: (void)
+        """
+        return self.following_fpath
+
+    def set_following_fpath(self, fpath):
+        """
+        Sets the following file path
+        :param fpath: file path
+        :return: (void)
+        """
+        self.following_fpath = fpath
+
+    def get_following_fname(self):
+        """
+        Gets the following file path
+        :return: (void)
+        """
+        return self.following_fpath
 
     def set_followers(self, f):
         """
@@ -25,12 +53,12 @@ class IGModel:
         """
         self.followers = f
 
-    def get_following(self):
+    def get_followers(self):
         """
-        Gets the following dictionary
-        :return: (dict) following
+        Gets the follower dictionary
+        :return: (dict) followers
         """
-        return self.following
+        return self.followers
 
     def set_following(self, f):
         """
@@ -40,12 +68,37 @@ class IGModel:
         """
         self.following = f
 
+    def get_following(self):
+        """
+        Gets the following dictionary
+        :return: (dict) following
+        """
+        return self.following
+
+    def gen_followers_str(self):
+        """
+        Generates a hyperlinked string with the uploaded followers file
+        :return: string for the status bar
+        """
+        fname = os.path.basename(self.followers_fpath)
+        return f"Uploaded <a href='file:///{self.followers_fpath}'>{fname}</a> as followers"
+
+    def gen_following_str(self):
+        """
+        Generates a hyperlinked string with the uploaded following file
+        :return: string for the status bar
+        """
+        fname = os.path.basename(self.following_fpath)
+        return f"Uploaded <a href='file:///{self.following_fpath}'>{fname}</a> as following"
+
     def compare_followers(self):
         """
         Determines who is followed that doesn't follow back
         :return: (list) list of usernames
         """
         diff = []
+        print(self.followers_fpath)
+        print(self.following_fpath)
         for following in self.following["relationships_following"]:
             diff.append(following["string_list_data"][0]["value"])
         for follower in self.followers:

@@ -1,6 +1,6 @@
 from pathlib import Path
-from PyQt6.QtGui import QFont
-from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFont, QDesktopServices
+from PyQt6.QtCore import Qt, QUrl
 from PyQt6.QtWidgets import QMainWindow, QWidget, QGridLayout, QLabel, QPushButton, \
     QTextEdit, QFileDialog, QStatusBar
 import qdarktheme
@@ -27,6 +27,7 @@ class IGView(QMainWindow):
         self._create_compare_button()
         self._create_display()
         self._create_status_bar()
+        self._create_status_label()
         self.setMinimumSize(500, 250)
         self.show()
 
@@ -104,7 +105,7 @@ class IGView(QMainWindow):
         :return: (string) the file name
         """
         home_dir = str(Path.home())
-        fname = QFileDialog.getOpenFileName(self, caption="Select a File", directory=home_dir, filter="JSON (*.json)")
+        fname, _ = QFileDialog.getOpenFileName(self, caption="Select a File", directory=home_dir, filter="JSON (*.json)")
         return fname
 
     def set_display(self, text):
@@ -130,17 +131,30 @@ class IGView(QMainWindow):
         self.status_bar = QStatusBar(self)
         self.setStatusBar(self.status_bar)
 
-    def set_status_bar(self, msg):
+    def _create_status_label(self):
+        """
+        Creates the label for the status bar
+        :return: (void)
+        """
+        self.status_label = QLabel()
+        self.status_label.setTextFormat(Qt.TextFormat.RichText)
+        self.status_label.setTextInteractionFlags(
+            Qt.TextInteractionFlag.TextBrowserInteraction)
+        self.status_bar.addWidget(self.status_label)
+
+    def set_status_label(self, msg):
         """
         Sets the status bar text
         :param msg: (string) the message to set
         :return: (void)
         """
-        self.status_bar.showMessage(msg)
+        self.status_label.setText(msg)
+        self.status_label.setStyleSheet("QLabel:hover { background-color: transparent; }")
+        self.status_label.linkActivated.connect(lambda url: QDesktopServices.openUrl(QUrl(url)))
 
-    def clear_status_bar(self):
+    def clear_status_label(self):
         """
-        Clears the status bar
+        Clears the status label
         :return: (void)
         """
-        self.status_bar.showMessage("")
+        self.status_label.setText("")
