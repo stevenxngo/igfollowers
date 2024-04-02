@@ -3,7 +3,7 @@ import FileButton from "./buttons/FileButton";
 import CompareButton from "./buttons/CompareButton";
 import OutputBox from "./OutputBox";
 import DownloadButton from "./buttons/DownloadButton";
-import { compareFollows } from "../logic/logic";
+import { compareFollows } from "../../logic/logic";
 
 function Form() {
   const [followers, setFollowers] = useState();
@@ -62,7 +62,7 @@ function Form() {
         />
       </div>
       <CompareButton compFunc={compare} />
-      <p className="mt-1 text-xs text-red-600 sm:text-sm">{error}</p>
+      <p className="mt-4 text-xs text-red-600 sm:text-sm">{error}</p>
       <OutputBox data={diff} />
       {diff && diff.length > 0 && <DownloadButton download={download} />}
     </div>
