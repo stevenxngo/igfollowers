@@ -66,6 +66,15 @@ function Info() {
         If you do not follow these steps, the app will not work as intended.
       </div>
       <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
+      <a
+          href="https://youtu.be/vfQjqbCuicY"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-ig-pink mx-auto mt-4 inline-block text-2xl font-bold underline "
+        >
+          Data Download Tutorial
+        </a>
+      <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
       <div className="my-2">
         <p className="mx-auto max-w-md">
           {" "}
