@@ -5,7 +5,16 @@ function Info() {
         How to Use
       </h2>
       <p className="mx-auto max-w-md text-lg">
-        Follow{" "}
+        Go to{" "}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-ig-pink font-bold underline"
+          href="https://www.instagram.com/download/request/"
+        >
+          Instagram Data Download
+        </a>{" "}
+        and follow{" "}
         <a
           href="https://help.instagram.com/181231772500920/?cms_platform=www&helpref=platform_switcher#:~:text=Download%20a%20copy%20of%20your%20information%20in%20Accounts%20Center%3A"
           target="_blank"
@@ -16,13 +25,13 @@ function Info() {
         </a>{" "}
         (specifically{" "}
         <span className="font-medium italic">
-          "Download a copy of your information in Accounts Center"
+          "Download a copy of your information in your Instagram settings"
         </span>
         ) to download your data from Instagram
       </p>
       <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
       <div className="my-2">
-        <h4 className="text-2xl font-bold mb-2">Important:</h4>
+        <h4 className="mb-2 text-2xl font-bold">Important:</h4>
         <ul className="mb-2 list-inside list-disc space-y-1">
           <li>
             Select{" "}
@@ -75,7 +84,7 @@ function Info() {
           href="https://youtu.be/Pu4-YcPZ9DE"
           target="_blank"
           rel="noopener noreferrer"
-          className="block mx-auto mt-4 text-2xl font-bold underline hover:text-ig-pink"
+          className="hover:text-ig-pink mx-auto mt-4 inline-block text-2xl font-bold underline "
         >
           Demo Video
         </a>
