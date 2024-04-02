@@ -2,9 +2,13 @@
   "name": "igfollowers",
   "private": true,
   "version": "0.0.0",
+  "author": "Steven Ngo <steventxngo@gmail.com> (https://personal-portfolio-stevenxngos-projects.vercel.app/)",
+  "homepage": "https://stevenxngo.github.io/igfollowers",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -24,6 +28,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",
