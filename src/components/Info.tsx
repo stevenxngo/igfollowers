@@ -10,7 +10,7 @@ function Info() {
           href="https://help.instagram.com/181231772500920/?cms_platform=www&helpref=platform_switcher#:~:text=Download%20a%20copy%20of%20your%20information%20in%20Accounts%20Center%3A"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-ig-d-purple font-bold underline"
+          className="hover:text-ig-pink font-bold underline"
         >
           these steps
         </a>{" "}
@@ -70,6 +70,15 @@ function Info() {
           is likely named followers.json or followers_1.json and the following
           file is likely named following.json.
         </p>
+        <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
+        <a
+          href="https://youtu.be/Pu4-YcPZ9DE"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block mx-auto mt-4 text-2xl font-bold underline hover:text-ig-pink"
+        >
+          Demo Video
+        </a>
       </div>
     </div>
   );

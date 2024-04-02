@@ -11,7 +11,7 @@ function Footer() {
         <p className="mb-2 mt-1">
           &copy; {new Date().getFullYear()}{" "}
           <a
-            className="hover:text-ig-d-purple underline"
+            className="hover:text-ig-pink underline"
             href="https://personal-portfolio-stevenxngos-projects.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
