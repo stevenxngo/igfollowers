@@ -1,10 +1,13 @@
 import "./App.css";
+import Title from "./components/Title";
+import Form from "./components/Form";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </>
+    <main className="flex min-h-screen flex-col content-center px-8 py-16 text-center">
+      <Title />
+      <Form />
+    </main>
   );
 }
 
