@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main className="flex min-h-screen flex-col content-center py-12 text-center">
+    <main className="flex min-h-screen flex-col content-center py-12 px-8 text-center">
       <Title />
       <Form />
       <hr className="mx-auto w-3/4 h-px border-0 bg-gray-700" />

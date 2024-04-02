@@ -1,7 +1,7 @@
 import {
   FaLinkedin,
   FaGithub,
-  // FaInstagram,
+  FaInstagram,
   FaLaptopCode,
   FaSpotify,
 } from "react-icons/fa";
@@ -25,13 +25,13 @@ const socials = [
     link: "https://github.com/stevenxngo",
     color: "hover:text-gray-600",
   },
-  // {
-  //   name: "Instagram",
-  //   username: "stevenxngo",
-  //   icon: FaInstagram,
-  //   link: "https://www.instagram.com/stevenxngo/",
-  //   color: "hover:text-ig-pink",
-  // },
+  {
+    name: "Instagram",
+    username: "stevenxngo",
+    icon: FaInstagram,
+    link: "https://www.instagram.com/stevenxngo/",
+    color: "hover:text-ig-pink",
+  },
   {
     name: "Spotify",
     icon: FaSpotify,

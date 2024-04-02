@@ -5,8 +5,8 @@ function Footer() {
     <footer className="mx-auto mt-4 text-sm md:text-base">
       <div className="container mx-auto items-center text-center">
         <p className="max-w-md">
-          This app is not affiliated with Instagram or Meta. It is a personal project
-          made for educational and entertainment purposes.
+          This app is not affiliated with Instagram or Meta. It is a personal
+          project made for educational and entertainment purposes.
         </p>
         <p className="mb-2 mt-1">
           &copy; {new Date().getFullYear()}{" "}

@@ -22,7 +22,7 @@ function Info() {
       </p>
       <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
       <div className="my-2">
-        <h4 className="text-2xl font-bold">Important:</h4>
+        <h4 className="text-2xl font-bold mb-2">Important:</h4>
         <ul className="mb-2 list-inside list-disc space-y-1">
           <li>
             Select{" "}
