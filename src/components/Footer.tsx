@@ -4,25 +4,9 @@ function Footer() {
   return (
     <footer className="mx-auto mt-4 text-sm md:text-base">
       <div className="container mx-auto items-center text-center">
-        <p>
-          Built with{" "}
-          <a
-            className="hover:text-ig-d-purple underline"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://react.dev/"
-          >
-            React
-          </a>{" "}
-          and{" "}
-          <a
-            className="hover:text-ig-d-purple underline"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://vitejs.dev/"
-          >
-            Vite
-          </a>
+        <p className="max-w-md">
+          This app is not affiliated with Instagram or Meta. It is a personal project
+          made for educational and entertainment purposes.
         </p>
         <p className="mb-2 mt-1">
           &copy; {new Date().getFullYear()}{" "}

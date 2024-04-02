@@ -1,9 +1,9 @@
 import {
   FaLinkedin,
   FaGithub,
-  FaInstagram,
+  // FaInstagram,
   FaLaptopCode,
-  FaSpotify,
+  // FaSpotify,
 } from "react-icons/fa";
 
 const socials = [
@@ -25,19 +25,19 @@ const socials = [
     link: "https://github.com/stevenxngo",
     color: "hover:text-gray-600",
   },
-  {
-    name: "Instagram",
-    username: "stevenxngo",
-    icon: FaInstagram,
-    link: "https://www.instagram.com/stevenxngo/",
-    color: "hover:text-ig-pink",
-  },
-  {
-    name: "Spotify",
-    icon: FaSpotify,
-    link: "https://open.spotify.com/user/a202jrbuwjn17aw171oymxokf",
-    color: "hover:text-green-500",
-  },
+  // {
+  //   name: "Instagram",
+  //   username: "stevenxngo",
+  //   icon: FaInstagram,
+  //   link: "https://www.instagram.com/stevenxngo/",
+  //   color: "hover:text-ig-pink",
+  // },
+  // {
+  //   name: "Spotify",
+  //   icon: FaSpotify,
+  //   link: "https://open.spotify.com/user/a202jrbuwjn17aw171oymxokf",
+  //   color: "hover:text-green-500",
+  // },
 ];
 
 function Socials() {
