@@ -64,6 +64,7 @@ function Form() {
       <CompareButton compFunc={compare} />
       <p className="mt-4 text-xs text-red-600 sm:text-sm">{error}</p>
       <OutputBox data={diff} />
+      <p className="my-2 font-semibold">Count: {diff ? diff.length : 0}</p>
       {diff && diff.length > 0 && <DownloadButton download={download} />}
     </div>
   );
