@@ -3,7 +3,7 @@ import FileButton from "./buttons/FileButton";
 import CompareButton from "./buttons/CompareButton";
 import OutputBox from "./OutputBox";
 import DownloadButton from "./buttons/DownloadButton";
-import { compareFollows } from "../../logic/logic";
+import { compareFollows } from "../../logic/follows";
 
 function Form() {
   const [followers, setFollowers] = useState();
