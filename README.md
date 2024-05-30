@@ -15,6 +15,12 @@ This is a web that checks who you follow on Instagram that doesn't follow you ba
 3. Download the data and extract the zip file.
 4. Go to the `connections` folder and upload the `followers.json` and `following.json` file.
 
-## Liscense
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions, feedback, or inquiries about the project, feel free to reach out to me:
+
+**Steven Ngo** - [steventxngo@gmail.com](mailto:steventxngo@gmail.com) - [GitHub](https://github.com/stevenxngo) - [LinkedIn](https://www.linkedin.com/in/stevenxngo/)
