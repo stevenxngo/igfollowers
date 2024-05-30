@@ -10,7 +10,7 @@ const socials = [
   {
     name: "Portfolio",
     icon: FaLaptopCode,
-    link: "https://personal-portfolio-stevenxngos-projects.vercel.app/",
+    link: "https://www.stevenxngo.com/",
     color: "hover:text-teal-500",
   },
   {
