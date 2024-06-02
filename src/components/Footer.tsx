@@ -12,7 +12,7 @@ function Footer() {
           &copy; {new Date().getFullYear()}{" "}
           <a
             className="hover:text-ig-pink underline"
-            href="https://personal-portfolio-stevenxngos-projects.vercel.app/"
+            href="https://www.stevenxngo.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
