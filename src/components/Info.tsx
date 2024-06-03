@@ -1,103 +1,74 @@
 function Info() {
   return (
-    <div className="my-4">
-      <h2 className="from-ig-orange via-ig-pink to-ig-l-purple mb-2 bg-gradient-to-br bg-clip-text text-3xl font-bold text-transparent">
+    <div className="mb-2 mt-4">
+      <h2 className="bg-gradient-to-br from-ig-orange via-ig-pink to-ig-l-purple bg-clip-text text-3xl font-bold text-transparent">
         How to Use
       </h2>
-      <p className="mx-auto max-w-md text-lg">
-        Go to{" "}
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-ig-pink font-bold underline"
-          href="https://www.instagram.com/download/request/"
-        >
-          Instagram Data Download
-        </a>{" "}
-        and follow{" "}
-        <a
-          href="https://help.instagram.com/181231772500920/?cms_platform=www&helpref=platform_switcher#:~:text=Download%20a%20copy%20of%20your%20information%20in%20Accounts%20Center%3A"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-ig-pink font-bold underline"
-        >
-          these steps
-        </a>{" "}
-        (specifically{" "}
-        <span className="font-medium italic">
-          "Download a copy of your information in your Instagram settings"
-        </span>
-        ) to download your data from Instagram
-      </p>
-      <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
-      <div className="my-2">
-        <h4 className="mb-2 text-2xl font-bold">Important:</h4>
-        <ul className="mb-2 list-inside list-disc space-y-1">
-          <li>
-            Select{" "}
-            <span className="font-semibold italic">
-              Some of your information
-            </span>{" "}
-            and{" "}
-            <span className="font-semibold italic">
-              Followers and following
-            </span>{" "}
-            for{" "}
-            <span className="font-semibold italic">
-              How much information do you want?
-            </span>
-          </li>
-          <li>
-            Select{" "}
-            <span className="font-semibold italic">Download to device</span> for{" "}
-            <span className="font-semibold italic">
-              What do you want to do with your information?
-            </span>
-          </li>
-          <li>
-            Select <span className="font-semibold italic">All time</span> for{" "}
-            <span className="font-semibold italic">Date range</span>
-          </li>
-          <li>
-            Select <span className="font-semibold italic">JSON</span> for{" "}
-            <span className="font-semibold italic">Format</span>
-          </li>
-        </ul>
-        If you do not follow these steps, the app will not work as intended.
-      </div>
-      <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
+
       <a
-          href="https://youtu.be/vfQjqbCuicY"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-ig-pink mx-auto mt-4 inline-block text-2xl font-bold underline "
-        >
-          Data Download Tutorial
-        </a>
-      <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
-      <div className="my-2">
-        <p className="mx-auto max-w-md">
-          {" "}
-          After a couple of minutes (depending on the size of your data), you
-          will recieve an email from Instagram with a link to download your
-          data. Once you have downloaded your data, unzip the folder and upload
-          the appropriate files to the app.
-        </p>
-        <p className="mx-auto mt-4 max-w-md">
-          <span className="font-semibold italic">Note:</span> the followers file
-          is likely named followers.json or followers_1.json and the following
-          file is likely named following.json.
-        </p>
-        <hr className="mx-auto mt-3 h-px w-1/2 border-0 bg-gray-700" />
-        <a
-          href="https://youtu.be/Pu4-YcPZ9DE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-ig-pink mx-auto mt-4 inline-block text-2xl font-bold underline "
-        >
-          Demo Video
-        </a>
+        href="https://youtu.be/vfQjqbCuicY"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-auto mt-4 text-center text-lg font-bold underline hover:text-ig-l-purple"
+      >
+        Data Download Tutorial
+      </a>
+
+      <div className="mx-auto mt-1 max-w-sm px-4 text-justify sm:max-w-md sm:px-0">
+        <ol className="list-decimal text-white">
+          <li>
+            Go to{" "}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic underline hover:text-ig-l-purple"
+              href="https://www.instagram.com/download/request/"
+            >
+              Instagram Data Download
+            </a>{" "}
+            and follow{" "}
+            <a
+              href="https://help.instagram.com/181231772500920/?cms_platform=www&helpref=platform_switcher#:~:text=Download%20a%20copy%20of%20your%20information%20in%20Accounts%20Center%3A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="italic underline hover:text-ig-l-purple"
+            >
+              these steps
+            </a>{" "}
+            to download your data from Instagram
+          </li>
+          <li>
+            Select these options:
+            <ul className="list-inside list-disc italic">
+              <li>Some of your information &rarr; Followers and following</li>
+              <li>Download to device</li>
+              <li>
+                All time <span className="not-italic">for</span> Date range
+              </li>
+              <li>
+                JSON <span className="not-italic">for</span> Format
+              </li>
+            </ul>
+          </li>
+          <li>
+            Once you recieve an email from Instagram that your data is ready
+            (may take a few minutes), download the zip file and extract it
+          </li>
+          <li>
+            Upload the followers and following JSON files to the app (likely
+            named followers.json and followers_1.json)
+          </li>
+        </ol>
       </div>
+
+      <a
+        href="https://youtu.be/Pu4-YcPZ9DE"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-auto mt-4 text-center text-lg font-bold underline hover:text-ig-l-purple"
+      >
+        Demo
+      </a>
     </div>
   );
 }
