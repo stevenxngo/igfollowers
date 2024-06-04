@@ -2,7 +2,25 @@
 
 This is a web that checks who you follow on Instagram that doesn't follow you back. It uses uploaded JSON data downloaded directly from Instagram. Built with React and Vite and deployed on GitHub Pages.
 
-[Live Demo](https://youtu.be/Pu4-YcPZ9DE)
+[Demo Video](https://youtu.be/Pu4-YcPZ9DE)
+
+## Deployment
+
+The web app is deployed on GitHub Pages. You can access it [here](https://stevenxngo.github.io/igfollowers/).
+
+## Local Installation
+
+1. Clone the repository.
+2. Install the dependencies.
+    ```bash
+    npm install
+    ```
+3. Start the development server.
+    ```bash
+    npm run dev
+    ```
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
 
 ## Usage
 
