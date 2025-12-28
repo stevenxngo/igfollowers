@@ -1,6 +1,6 @@
 type StringListData = {
-  href: string;
-  value: string;
+  href?: string;
+  value?: string;
   timestamp: number;
 }
 
@@ -12,7 +12,7 @@ type Followers = {
 
 type Follow = {
   title: string;
-  media_list_data: unknown[];
+  media_list_data?: unknown[];
   string_list_data: StringListData[];
 }
 
@@ -46,7 +46,12 @@ export const getUsernames = (data: any, key: string) => {
 
 export const compareFollows = (followers: Followers[], following: Following) => {
   const followers_names = getUsernames(followers, "value");
-  const following_names = getUsernames(following, "value");
+  
+  // Extract following usernames from the new structure (title field)
+  const following_names = following.relationships_following
+    .map((follow) => follow.title)
+    .filter((title) => title && title.length > 0); // Filter out empty titles
+  
   const diff = following_names.filter((name) => !followers_names.includes(name));
   return diff;
 }
