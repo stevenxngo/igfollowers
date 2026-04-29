@@ -7,6 +7,10 @@ function About() {
         files are parsed locally — nothing is uploaded, stored, or transmitted
         anywhere.
       </p>
+      <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+        Note: deactivated accounts will appear in the results since they no
+        longer follow you back.
+      </p>
     </div>
   );
 }

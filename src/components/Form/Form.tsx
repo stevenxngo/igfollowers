@@ -43,8 +43,8 @@ function Form() {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex flex-row justify-center gap-6">
+    <div className="mx-auto flex w-full max-w-sm flex-col items-center">
+      <div className="flex w-full gap-4">
         <FileButton type="followers" label="Followers" setData={setFollowers} />
         <FileButton type="following" label="Following" setData={setFollowing} />
       </div>

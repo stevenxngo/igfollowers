@@ -1,8 +1,6 @@
 # Instagram Followers Checker Web App
 
-This is a web that checks who you follow on Instagram that doesn't follow you back. It uses uploaded JSON data downloaded directly from Instagram. Built with React and Vite and deployed on GitHub Pages.
-
-[Demo Video](https://youtu.be/Pu4-YcPZ9DE)
+This is a web app that checks who you follow on Instagram that doesn't follow you back. It uses uploaded JSON data downloaded directly from Instagram. Built with React and Vite and deployed on GitHub Pages.
 
 ## Deployment
 
@@ -31,7 +29,11 @@ The web app is deployed on GitHub Pages. You can access it [here](https://steven
     * Select ***JSON*** for ***Format***
 2. Wait for Instagram to send you an email with a link to download your data.
 3. Download the data and extract the zip file.
-4. Go to the `connections` folder and upload the `followers.json` and `following.json` file.
+4. Upload the `followers_1.json` (followers) and `following.json` (following) files to the app.
+
+## Notes
+
+- Deactivated accounts will appear in the results since they no longer follow you back.
 
 ## License
 

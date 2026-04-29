@@ -5,7 +5,7 @@ function Title() {
         Instagram Follower Checker
       </h1>
       <p className="mt-3 text-neutral-400">
-        Find out who you follow that doesn't follow you back.
+        See who doesn't follow you back.
       </p>
     </div>
   );
