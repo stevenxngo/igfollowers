@@ -1,37 +1,12 @@
-type StringListData = {
-  href?: string;
-  value?: string;
-  timestamp: number;
-}
-
-type Followers = {
-  title: string;
-  media_list_data: unknown[];
-  string_list_data: StringListData[];
-};
-
-type Follow = {
-  title: string;
-  media_list_data?: unknown[];
-  string_list_data: StringListData[];
-}
-
-type Following = {
-  relationships_following: Follow[];
-}
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getUsernames = (data: any, key: string) => {
+export const getUsernames = (data: any, key: string): string[] => {
   let usernames: string[] = [];
 
-  // data is an array
   if (Array.isArray(data)) {
     for (const item of data) {
       usernames = usernames.concat(getUsernames(item, key));
     }
-  }
-  // data is an object 
-  else if (typeof data === 'object' && data !== null) {
+  } else if (typeof data === 'object' && data !== null) {
     for (const objKey in data) {
       if (objKey === key) {
         usernames.push(data[objKey]);
@@ -44,14 +19,22 @@ export const getUsernames = (data: any, key: string) => {
   return usernames;
 }
 
-export const compareFollows = (followers: Followers[], following: Following) => {
-  const followers_names = getUsernames(followers, "value");
-  
-  // Extract following usernames from the new structure (title field)
-  const following_names = following.relationships_following
-    .map((follow) => follow.title)
-    .filter((title) => title && title.length > 0); // Filter out empty titles
-  
-  const diff = following_names.filter((name) => !followers_names.includes(name));
-  return diff;
+// Instagram has used different keys for usernames across export formats.
+// Try each candidate in order and return the first non-empty result.
+const USERNAME_KEYS = ["value", "title"];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const extractUsernames = (data: any): string[] => {
+  for (const key of USERNAME_KEYS) {
+    const names = getUsernames(data, key).filter((n) => !!n && n.length > 0);
+    if (names.length > 0) return names;
+  }
+  return [];
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const compareFollows = (followers: any, following: any): string[] => {
+  const followerNames = extractUsernames(followers);
+  const followingNames = extractUsernames(following);
+  return followingNames.filter((name) => !followerNames.includes(name));
 }

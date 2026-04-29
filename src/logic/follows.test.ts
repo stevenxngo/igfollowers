@@ -1,4 +1,4 @@
-import { getUsernames, compareFollows } from "./follows";
+import { getUsernames, extractUsernames, compareFollows } from "./follows";
 import empty_followers from "../data/json/empty_followers.json"
 import empty_following from "../data/json/empty_following.json"
 import followers from "../data/json/followers_1.json"
@@ -26,7 +26,21 @@ describe("follows logic", () => {
       expect(getUsernames(followers, "value").sort()).toEqual(sorted_followers);
     });
     it('should return the following usernames', () => {
-      expect(getUsernames(following, "value").sort()).toEqual(sorted_following);
+      expect(getUsernames(following, "title").filter((t: string) => t.length > 0).sort()).toEqual(sorted_following);
+    });
+  });
+  describe("extractUsernames", () => {
+    it('should return an empty list for empty followers', () => {
+      expect(extractUsernames(empty_followers)).toEqual([]);
+    });
+    it('should return an empty list for empty following', () => {
+      expect(extractUsernames(empty_following)).toEqual([]);
+    });
+    it('should extract follower usernames from value fields', () => {
+      expect(extractUsernames(followers).sort()).toEqual(sorted_followers);
+    });
+    it('should extract following usernames from title fields', () => {
+      expect(extractUsernames(following).sort()).toEqual(sorted_following);
     });
   });
   describe("compareFollows", () => {
