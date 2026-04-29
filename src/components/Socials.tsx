@@ -11,38 +11,37 @@ const socials = [
     name: "Portfolio",
     icon: FaLaptopCode,
     link: "https://www.stevenxngo.com/",
-    color: "hover:text-teal-500",
+    color: "hover:text-teal-400",
   },
   {
     name: "LinkedIn",
     icon: FaLinkedin,
     link: "https://www.linkedin.com/in/stevenxngo",
-    color: "hover:text-blue-600",
+    color: "hover:text-blue-400",
   },
   {
     name: "Github",
     icon: FaGithub,
     link: "https://github.com/stevenxngo",
-    color: "hover:text-gray-600",
+    color: "hover:text-white",
   },
   {
     name: "Instagram",
-    username: "stevenxngo",
     icon: FaInstagram,
     link: "https://www.instagram.com/stevenxngo/",
-    color: "hover:text-ig-pink",
+    color: "hover:text-violet-400",
   },
   {
     name: "Spotify",
     icon: FaSpotify,
     link: "https://open.spotify.com/user/a202jrbuwjn17aw171oymxokf",
-    color: "hover:text-green-500",
+    color: "hover:text-green-400",
   },
 ];
 
 function Socials() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center gap-5">
       {socials.map((social, index) => {
         const Icon = social.icon;
         return (
@@ -51,7 +50,8 @@ function Socials() {
             href={social.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`mx-2 text-2xl ${social.color} transition duration-300 ease-in-out hover:scale-110`}
+            aria-label={social.name}
+            className={`text-xl text-neutral-500 transition-colors duration-200 ${social.color}`}
           >
             <Icon />
           </a>

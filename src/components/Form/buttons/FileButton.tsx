@@ -1,12 +1,14 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { FiUpload, FiCheck } from "react-icons/fi";
 
 type Props = {
   type: "followers" | "following";
-  text: string;
+  label: string;
   setData: Dispatch<SetStateAction<undefined>>;
 };
 
-function FileButton({ type, text, setData }: Props) {
+function FileButton({ type, label, setData }: Props) {
+  const [fileName, setFileName] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const processFile = (e: ChangeEvent<HTMLInputElement>) => {
@@ -17,9 +19,11 @@ function FileButton({ type, text, setData }: Props) {
         try {
           const json = JSON.parse(e.target?.result as string);
           setData(json);
+          setFileName(file.name);
           setError(null);
-        } catch (error) {
-          setError("Error parsing JSON file");
+        } catch {
+          setError("Invalid JSON");
+          setFileName(null);
         }
       };
       reader.readAsText(file);
@@ -27,18 +31,37 @@ function FileButton({ type, text, setData }: Props) {
   };
 
   return (
-    <div className="flex flex-col content-center">
-      <label htmlFor={type} className="mb-2 text-lg sm:text-xl font-bold">
-        {text}
+    <div className="flex flex-col items-center gap-1">
+      <label
+        htmlFor={type}
+        className={`flex w-44 cursor-pointer flex-col items-center gap-2.5 rounded-xl border-2 border-dashed px-4 py-6 transition-colors duration-200 ${
+          fileName
+            ? "border-violet-400/60 bg-violet-400/5"
+            : "border-neutral-700 hover:border-neutral-500 hover:bg-neutral-900"
+        }`}
+      >
+        {fileName ? (
+          <FiCheck className="text-xl text-violet-400" />
+        ) : (
+          <FiUpload className="text-xl text-neutral-500" />
+        )}
+        <span className="text-sm font-semibold text-neutral-200">{label}</span>
+        <span
+          className={`max-w-full truncate text-xs ${
+            fileName ? "text-violet-400" : "text-neutral-500"
+          }`}
+        >
+          {fileName ?? "Click to upload"}
+        </span>
+        <input
+          id={type}
+          type="file"
+          accept=".json"
+          onChange={processFile}
+          className="hidden"
+        />
       </label>
-      <input
-        className="block w-full cursor-pointer rounded-md border border-gray-600 bg-gray-700 text-sm sm:text-md text-gray-400 placeholder-gray-400 focus:outline-none"
-        id={type}
-        type="file"
-        accept=".json"
-        onChange={processFile}
-      />
-      <p className="mt-1 text-xs text-red-600 sm:text-sm">{error}</p>
+      {error && <p className="text-xs text-red-400">{error}</p>}
     </div>
   );
 }

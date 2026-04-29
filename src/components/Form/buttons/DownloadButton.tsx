@@ -1,3 +1,5 @@
+import { FiDownload } from "react-icons/fi";
+
 type Props = {
   download: () => void;
 };
@@ -6,11 +8,10 @@ function DownloadButton({ download }: Props) {
   return (
     <button
       onClick={download}
-      className="from-ig-orange via-ig-pink to-ig-l-purple text-md group relative mb-5 inline-flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br p-0.5 font-semibold hover:text-white focus:outline-none"
+      className="mt-4 inline-flex items-center gap-2 rounded-lg border border-neutral-700 px-6 py-2 text-sm font-medium text-neutral-300 transition-colors duration-200 hover:border-neutral-500 hover:text-white"
     >
-      <span className="relative rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0 dark:bg-gray-900">
-        Download as Text File
-      </span>
+      <FiDownload className="text-base" />
+      Download as text file
     </button>
   );
 }

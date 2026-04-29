@@ -2,26 +2,23 @@ import Socials from "./Socials";
 
 function Footer() {
   return (
-    <footer className="mx-auto mt-4 text-sm md:text-base">
-      <div className="container mx-auto items-center text-center">
-        <p className="max-w-md">
-          This app is not affiliated with Instagram or Meta. It is a personal
-          project made for educational and entertainment purposes.
-        </p>
-        <p className="mb-2 mt-1">
-          &copy; {new Date().getFullYear()}{" "}
-          <a
-            className="hover:text-ig-pink underline"
-            href="https://www.stevenxngo.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Steven Ngo
-          </a>
-          . All rights reserved.
-        </p>
-        <Socials />
-      </div>
+    <footer className="flex flex-col items-center gap-3 text-xs text-neutral-600">
+      <p className="max-w-sm leading-relaxed">
+        Not affiliated with Instagram or Meta. Personal project for educational
+        and entertainment purposes.
+      </p>
+      <p>
+        &copy; {new Date().getFullYear()}{" "}
+        <a
+          href="https://www.stevenxngo.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-neutral-500 underline-offset-2 hover:text-white hover:underline"
+        >
+          Steven Ngo
+        </a>
+      </p>
+      <Socials />
     </footer>
   );
 }
