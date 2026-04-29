@@ -64,11 +64,11 @@ function Info() {
           <span>
             Upload the two JSON files above — typically named{" "}
             <span className="font-mono text-xs text-neutral-200">
-              followers.json
+              followers_1.json
             </span>{" "}
             and{" "}
             <span className="font-mono text-xs text-neutral-200">
-              followers_1.json
+              following_1.json
             </span>
             .
           </span>
