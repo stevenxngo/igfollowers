@@ -20,18 +20,13 @@ function Form() {
         const diff = compareFollows(followers, following);
         setDiff(diff);
         setError("");
-        console.log(followers);
-        console.log(following);
       } catch (e) {
-        if (e instanceof Error) {
-          setDiff([]);
-          setError(
-            "There was an error parsing the files. They may be formatted incorrectly.",
-          );
-        } else {
-          setDiff([]);
-          setError("An unknown error occurred.");
-        }
+        setDiff([]);
+        setError(
+          e instanceof Error
+            ? "There was an error parsing the files. They may be formatted incorrectly."
+            : "An unknown error occurred.",
+        );
       }
     }
   };
@@ -48,23 +43,23 @@ function Form() {
   };
 
   return (
-    <div className="justify-center">
-      <div className="my-5 flex flex-row justify-center gap-8">
-        <FileButton
-          type="followers"
-          text="Upload Followers JSON"
-          setData={setFollowers}
-        />
-        <FileButton
-          type="following"
-          text="Upload Following JSON"
-          setData={setFollowing}
-        />
+    <div className="mx-auto flex w-full max-w-sm flex-col items-center">
+      <div className="flex w-full gap-4">
+        <FileButton type="followers" label="Followers" setData={setFollowers} />
+        <FileButton type="following" label="Following" setData={setFollowing} />
       </div>
-      <CompareButton compFunc={compare} />
-      <p className="mt-4 text-xs text-red-600 sm:text-sm">{error}</p>
+      <div className="mt-6">
+        <CompareButton compFunc={compare} />
+      </div>
+      {error && <p className="mt-3 text-xs text-red-400">{error}</p>}
       <OutputBox data={diff} />
-      <p className="my-2 font-semibold">Count: {diff ? diff.length : 0}</p>
+      {diff !== undefined && (
+        <p className="mt-3 text-sm text-neutral-500">
+          {diff.length === 0
+            ? "No results"
+            : `${diff.length} ${diff.length === 1 ? "account" : "accounts"} found`}
+        </p>
+      )}
       {diff && diff.length > 0 && <DownloadButton download={download} />}
     </div>
   );

@@ -2,19 +2,19 @@ import "./App.css";
 import Title from "./components/Title";
 import Form from "./components/Form/Form";
 import Info from "./components/Info";
-import Privacy from "./components/About";
+import About from "./components/About";
 import Footer from "./components/Footer";
 
 function App() {
   return (
-    <main className="flex min-h-screen flex-col content-center px-8 py-12 text-center">
+    <main className="mx-auto flex min-h-screen max-w-2xl flex-col px-6 py-16 text-center">
       <Title />
       <Form />
-      <hr className="mx-auto h-px w-3/4 border-0 bg-gray-700" />
+      <div className="my-14 border-t border-neutral-800" />
       <Info />
-      <hr className="mx-auto h-px w-3/4 border-0 bg-gray-700" />
-      <Privacy />
-      <hr className="mx-auto h-px w-3/4 border-0 bg-gray-700" />
+      <div className="my-14 border-t border-neutral-800" />
+      <About />
+      <div className="my-14 border-t border-neutral-800" />
       <Footer />
     </main>
   );

@@ -1,11 +1,11 @@
 function Title() {
   return (
-    <div>
-      <h1 className="from-ig-orange via-ig-pink to-ig-l-purple bg-gradient-to-br bg-clip-text text-4xl font-bold text-transparent lg:text-5xl">
+    <div className="mb-10">
+      <h1 className="text-4xl font-bold tracking-tight text-white lg:text-5xl">
         Instagram Follower Checker
       </h1>
-      <p className="mt-4 italic font">
-        Check who you follow that doesn't follow you back on Instagram.
+      <p className="mt-3 text-neutral-400">
+        See who doesn't follow you back.
       </p>
     </div>
   );

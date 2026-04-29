@@ -1,12 +1,15 @@
 function About() {
   return (
-    <div className="my-2">
-      <h2 className="from-ig-orange via-ig-pink to-ig-l-purple mb-2 bg-gradient-to-br bg-clip-text text-3xl font-bold text-transparent">
-        About
-      </h2>
-      <p className="mx-auto max-w-md">
-        Your data is not preserved or stored in any way. The follower and
-        following data is only used to calculate the difference in usernames.
+    <div>
+      <h2 className="mb-4 text-2xl font-bold text-white">About</h2>
+      <p className="text-sm leading-relaxed text-neutral-400">
+        Your data never leaves your browser. The follower and following JSON
+        files are parsed locally — nothing is uploaded, stored, or transmitted
+        anywhere.
+      </p>
+      <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+        Note: deactivated accounts will appear in the results since they no
+        longer follow you back.
       </p>
     </div>
   );

@@ -3,15 +3,31 @@ type Props = {
 };
 
 function OutputBox({ data }: Props) {
+  const hasResults = data && data.length > 0;
+
   return (
-    <textarea
-      id="output"
-      className="mx-auto mt-5 block w-2/3 max-w-sm rounded-lg border border-gray-600 bg-gray-700 p-2.5 text-sm placeholder-gray-400 sm:w-5/12 lg:w-1/4"
-      placeholder="Usernames will appear here..."
-      readOnly
-      rows={8}
-      value={data?.join("\n")}
-    ></textarea>
+    <div className="mt-6 w-full overflow-hidden rounded-xl border border-neutral-800 bg-neutral-900">
+      {hasResults ? (
+        <ul className="max-h-52 divide-y divide-neutral-800 overflow-y-auto">
+          {data.map((username, i) => (
+            <li key={i} className="transition-colors duration-150 hover:bg-neutral-800">
+              <a
+                href={`https://www.instagram.com/${username}/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-1.5 text-left font-mono text-sm text-neutral-200"
+              >
+                @{username}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="flex h-52 items-center justify-center">
+          <p className="text-sm text-neutral-600">Results will appear here</p>
+        </div>
+      )}
+    </div>
   );
 }
 
