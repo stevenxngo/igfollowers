@@ -4,7 +4,7 @@ This is a web app that checks who you follow on Instagram that doesn't follow yo
 
 ## Deployment
 
-The web app is deployed on GitHub Pages. You can access it [here](https://stevenxngo.github.io/igfollowers/).
+The web app is deployed on GitHub Pages. You can access it [here](https://stevenxngo.github.io/instagram-follower-checker/).
 
 ## Local Installation
 
